@@ -1,13 +1,11 @@
 package com.fadergs.swipeapp;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -100,12 +98,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         button.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 AlertDialog.Builder alerta = new AlertDialog.Builder(v.getContext());
                 alerta.setTitle("PONTUAÇÃO");
-                alerta.setMessage("Você acertou "+retornaQuantosAcertos(respostas,perguntas)+" de "+ perguntas.size());
+                alerta.setMessage("Você acertou " + retornaQuantosAcertos(respostas, perguntas) + " de " + perguntas.size());
                 alerta.setNeutralButton("OK", null);
                 alerta.show();
             }
@@ -128,10 +125,9 @@ public class MainActivity extends AppCompatActivity {
 
     //DEBUG ONLY
     int retornaQuantosAcertos(ArrayList<Boolean> respostas, ArrayList<Pergunta> perguntas) {
-       int total=0;
+        int total = 0;
         for (int i = 0; i < respostas.size(); i++) {
-            if(respostas.get(i) == perguntas.get(i).getResposta())
-            {
+            if (respostas.get(i) == perguntas.get(i).getResposta()) {
                 total++;
             }
         }
